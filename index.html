@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://ideaspacevr.github.io/aframe-particle-system-component/dist/aframe-particle-system-component.js"></script>
+  </head>
+  
+  <body>
+    <a-scene physics="debug: true" background="color: #000b10">
+      
+     <a-assets>
+       
+        <img id="panorama" src="https://cdn.glitch.global/d6a06d90-06e2-4519-9b58-e692079ad168/panorama_3000.jpg?v=1666069833521">
+       
+        <a-asset-item id="ovo" src="https://cdn.glitch.global/2e2edc02-fe57-4912-923c-af422a11090a/ovo.glb?v=1666990154490"></a-asset-item>
+       
+        <a-asset-item id="esqueleto" src="https://cdn.glitch.global/faba50d4-b6ed-4d84-be8e-2f396ae022e9/esqueleto_animacao_textura_fria01.glb?v=1667866214612"></a-asset-item>
+       
+        <audio id="ambiente" src="https://cdn.glitch.global/d6a06d90-06e2-4519-9b58-e692079ad168/1ambiente_agua.mp3?v=1666080982324" crossorigin="anonymous" preload="auto"></audio>
+       
+        <audio id="neuronio" src="https://cdn.glitch.global/2e2edc02-fe57-4912-923c-af422a11090a/3olho_nuronio.mp3?v=1666161315023" crossorigin="anonymous" preload="auto"></audio>
+       
+        <a-asset-item id="centro-dentro" src="https://cdn.glitch.global/8d60b7f2-3071-4bbc-a1b9-0c87596a22a5/centro_dentro.glb?v=1667573077882"></a-asset-item>
+       
+        <a-asset-item id="centro-fora" src="https://cdn.glitch.global/8d60b7f2-3071-4bbc-a1b9-0c87596a22a5/centro_fora.glb?v=1667573080961"></a-asset-item>
+       
+        <a-asset-item id="veia01" src="https://cdn.glitch.global/8d60b7f2-3071-4bbc-a1b9-0c87596a22a5/veia_01.glb?v=1667573090764"></a-asset-item>
+       
+        <a-asset-item id="veia02" src="https://cdn.glitch.global/8d60b7f2-3071-4bbc-a1b9-0c87596a22a5/veia_02.glb?v=1667573091222"></a-asset-item>
+       
+        <a-asset-item id="veia03" src="https://cdn.glitch.global/8d60b7f2-3071-4bbc-a1b9-0c87596a22a5/veia_03.glb?v=1667573091701"></a-asset-item>
+       
+        <a-asset-item id="veia04" src="https://cdn.glitch.global/8d60b7f2-3071-4bbc-a1b9-0c87596a22a5/veia_04.glb?v=1667573092306"></a-asset-item>
+       
+        <a-asset-item id="veia05" src="https://cdn.glitch.global/8d60b7f2-3071-4bbc-a1b9-0c87596a22a5/veia_05.glb?v=1667573092955"></a-asset-item>
+       
+        <a-asset-item id="veia06" src="https://cdn.glitch.global/8d60b7f2-3071-4bbc-a1b9-0c87596a22a5/veia_06.glb?v=1667573093520"></a-asset-item>
+       
+        <a-asset-item id="neuro01" src="https://cdn.glitch.global/298e50b5-e3ec-4538-ac5f-75192ddb0700/neuro1.glb?v=1668364913793"></a-asset-item>
+       
+        <a-asset-item id="neuro02" src="https://cdn.glitch.global/298e50b5-e3ec-4538-ac5f-75192ddb0700/neuro2.glb?v=1668364914806"></a-asset-item>
+       
+        <a-asset-item id="neuro03" src="https://cdn.glitch.global/298e50b5-e3ec-4538-ac5f-75192ddb0700/neuro3.glb?v=1668364915288"></a-asset-item>
+       
+        <a-asset-item id="neuro04" src="https://cdn.glitch.global/298e50b5-e3ec-4538-ac5f-75192ddb0700/neuro4.glb?v=1668364915738"></a-asset-item>
+       
+        <a-asset-item id="neuro05" src="https://cdn.glitch.global/298e50b5-e3ec-4538-ac5f-75192ddb0700/neuro5.glb?v=1668364916267"></a-asset-item>
+       
+        <a-asset-item id="neuro06" src="https://cdn.glitch.global/298e50b5-e3ec-4538-ac5f-75192ddb0700/neuro6.glb?v=1668364916822"></a-asset-item>
+       
+        <a-asset-item id="neuro07" src="https://cdn.glitch.global/298e50b5-e3ec-4538-ac5f-75192ddb0700/neuro7.glb?v=1668364917278"></a-asset-item>
+       
+        <a-asset-item id="neuro08" src="https://cdn.glitch.global/298e50b5-e3ec-4538-ac5f-75192ddb0700/neuro8.glb?v=1668364917836"></a-asset-item>
+       
+        <a-asset-item id="neuro09" src="https://cdn.glitch.global/298e50b5-e3ec-4538-ac5f-75192ddb0700/neuro9.glb?v=1668364918294"></a-asset-item>
+       
+        <a-asset-item id="neuro10" src="https://cdn.glitch.global/298e50b5-e3ec-4538-ac5f-75192ddb0700/neuro10.glb?v=1668364918945"></a-asset-item>
+       
+        <a-asset-item id="galho" src="https://cdn.glitch.global/298e50b5-e3ec-4538-ac5f-75192ddb0700/galhos_retos.glb?v=1668302221486"></a-asset-item> 
+       
+        <a-asset-item id="cascas" src="https://cdn.glitch.global/298e50b5-e3ec-4538-ac5f-75192ddb0700/cascas_junto_parado02.glb?v=1668370257013"></a-asset-item> 
+  
+    </a-assets>
+     
+  
+          <a-entity camera look-controls wasd-controls="acceleration:1000; fly:true"  
+                    position="-82 353 -567"></a-entity>
+  
+      
+      <!--<a-entity camera universal-controls kinematic-body></a-entity> -20 -3378 -3343
+    <a-entity light="type: directional; color: #FFF; intensity: 1" position="-0.5 1 1"></a-entity>
+      
+    <a-entity light="type: directional; color: #FFF; intensity: 1" position="0 0 0"></a-entity>
+
+     <a-entity light="type: directional; color: #FFF; intensity: 1" position="0.5 1 1"></a-entity>
+      
+        <a-entity light="type: directional; color: #FFF; intensity: 1" position="0.5 1 -1"></a-entity>-->
+      
+      
+      <a-sky id="image-360" radius="13000" src="#panorama" animation="property: rotation; to: 0 360 0; loop: true; dur: 300000; easing: linear;"></a-sky>
+      
+     <!--<a-entity light="type: ambient; color: #CCC"></a-entity> -->
+      
+       <a-entity  static-body
+                  gltf-model="#ovo" 
+                  position="0 0 0"
+                  scale="200 200 200"
+                  sound="src: #ambiente;
+                         autoplay: true;
+                         refDistance: 700;
+                         rolloffFactor: 4;
+                         loop: true;
+                         volume: 3"></a-entity>
+      
+      <a-entity gltf-model="#esqueleto"
+                scale="200 200 200"
+                position="0 0 0"
+                animation-mixer="loop:infinite"
+                model-opacity="0"></a-entity>
+      
+       <a-entity gltf-model="#centro-dentro"
+                 scale="200 200 200"
+                 position="95 -45 200"
+                 animation-mixer="loop:infinite"></a-entity>
+      
+        <a-entity gltf-model="#centro-fora"
+                 scale="200 200 200"
+                 position="95 -45 200"
+                 animation-mixer="loop:infinite"></a-entity>
+      
+       <a-entity gltf-model="#veia01"
+                 scale="200 200 200"
+                 position="95 -45 200"
+                 animation-mixer="loop:infinite"></a-entity>
+      
+      <a-entity gltf-model="#veia02"
+                 scale="200 200 200"
+                 position="95 -45 200"
+                 animation-mixer="loop:infinite"></a-entity>
+      
+      <a-entity gltf-model="#veia03"
+                 scale="200 200 200"
+                 position="95 -45 200"
+                 animation-mixer="loop:infinite"></a-entity>
+      
+      <a-entity gltf-model="#veia04"
+                 scale="200 200 200"
+                 position="95 -45 200"
+                 animation-mixer="loop:infinite"></a-entity>
+      
+      <a-entity gltf-model="#veia05"
+                 scale="200 200 200"
+                 position="95 -45 200"
+                 animation-mixer="loop:infinite"></a-entity>
+      
+      <a-entity gltf-model="#veia06"
+                 scale="200 200 200"
+                 position="95 -45 200"
+                 animation-mixer="loop:infinite"></a-entity>
+      
+      <a-entity gltf-model="#neuro01"
+                 scale="200 200 200"
+                 position="95 -45 200"
+                 animation-mixer="loop:infinite"></a-entity>
+      
+        <a-entity gltf-model="#neuro02"
+                 scale="200 200 200"
+                 position="95 -45 200"
+                 animation-mixer="loop:infinite"></a-entity>
+      
+       <a-entity gltf-model="#neuro03"
+                 scale="200 200 200"
+                 position="95 -45 200"
+                 animation-mixer="loop:infinite"></a-entity>
+      
+       <a-entity gltf-model="#neuro04"
+                 scale="200 200 200"
+                 position="95 -45 200"
+                 animation-mixer="loop:infinite"></a-entity>
+      
+       <a-entity gltf-model="#neuro05"
+                 scale="200 200 200"
+                 position="95 -45 200"
+                 animation-mixer="loop:infinite"></a-entity>
+      
+       <a-entity gltf-model="#neuro06"
+                 scale="200 200 200"
+                 position="95 -45 200"
+                 animation-mixer="loop:infinite"></a-entity>
+      
+       <a-entity gltf-model="#neuro07"
+                 scale="200 200 200"
+                 position="95 -45 200"
+                 animation-mixer="loop:infinite"></a-entity>
+      
+       <a-entity gltf-model="#neuro08"
+                 scale="200 200 200"
+                 position="95 -45 200"
+                 animation-mixer="loop:infinite"></a-entity>
+      
+       <a-entity gltf-model="#neuro09"
+                 scale="200 200 200"
+                 position="95 -45 200"
+                 animation-mixer="loop:infinite"></a-entity>
+      
+       <a-entity gltf-model="#neuro10"
+                 scale="200 200 200"
+                 position="95 -45 200"
+                 animation-mixer="loop:infinite"></a-entity>
+      
+       <!--animation="property: rotation; to: 0 360 0; loop: true; dur:20000"-->
+      
+      <a-entity position="-5 427 -439"
+                sound="src: #neuronio;
+                       autoplay: true;
+                       refDistance: 100;
+                       rolloffFactor: 3;
+                       volume: 3;
+                       loop: true"></a-entity>
+      
+      
+      <a-entity gltf-model="#galho"
+                scale="200 200 200"
+                position="0 0 0">  
+      </a-entity>
+      
+       
+      <a-entity gltf-model="#cascas"
+                scale="200 200 200"
+                position="0 0 0"
+                animation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; dur: 150000; easing: linear"
+               
+          >  
+      </a-entity>
+  
+      
+      
+      
+      <!--<a-sound src="#ambiente" 
+               autoplay="true" 
+               position="0 0 0"></a-sound>-->
+      
+      <!-- <a-entity gltf-model="#cubo" animation-mixer="clip:Take001; loop:infinite"></a-entity>-->
+    
+   <a-entity   
+                position="0 -1300 -100" 
+                rotation="0 0 0"
+                particle-system="preset: dust;
+                                maxAge: 7;
+                                positionSpread: 5000 5000 7000;
+                                type: 2 (sphere);
+                                color: #C8DAD8, #5C6D74;
+                                opacity: 0.015;
+                                direction: 0;
+                                enable: true;
+                                particleCount: 3000;
+                                size: 2300;
+                                maxParticleCount:3000;
+                                blending: 2;
+                                dragSpread: 10;
+                                dragValue:0.3;
+                                dragSpread: 0.5;
+                                randomise: true;
+                                accelerationValue: -7, -30, 30">
+  </a-entity>
+      
+        <a-entity   
+                position="0 -1500 -500" 
+                rotation="0 0 0"
+                particle-system="preset: dust;
+                                maxAge: 7;
+                                positionSpread: 3000 3000 3000;
+                                type: 2 (sphere);
+                                color: #C8DAD8, #5C6D74;
+                                opacity: 0.023;
+                                direction: 0;
+                                enable: true;
+                                particleCount: 1000;
+                                size: 1500;
+                                maxParticleCount:1000;
+                                blending: 2;
+                                dragSpread: 10;
+                                dragValue:0.3;
+                                dragSpread: 0.5;
+                                randomise: true;
+                                accelerationValue: -7, -30, 30">
+  </a-entity>
+      
+   
+      
+
+      
+      
+    </a-scene>
+    
+  </body>
+  
+</html>
