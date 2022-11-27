@@ -1,0 +1,196 @@
+* {
+	box-sizing: border-box;
+}
+
+h1, h2, ul, p {
+	margin-top: 0;
+	padding: 0;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 300;
+	color: #a0bfd2;
+	font-size: 23px;
+}
+
+body,html{
+	height: 100%
+}
+
+
+body {
+	background-color: #00070c;
+	margin: 0;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 300;
+	position: relative;
+	min-height: 100%;
+	display: block;
+    
+}
+
+.topo {
+	
+	position: fixed;
+	z-index: 100;
+	left: 0;
+	right:0;
+	top: 0;
+	padding-bottom: 170px;
+	background-image: linear-gradient(180deg, #00070c, #00070c0c ) ;
+}
+
+.menu {
+	display: block;
+	text-align: center;
+	margin-top: 50px;
+}
+
+.navegacao {
+	justify-content: center;
+}
+
+.submenu {
+	background-color: transparent;
+	border: 0;
+}
+
+.menu ul {
+	list-style: none;
+	margin-bottom: 20px;	
+}
+
+.menu li {
+	display: block;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	
+}
+
+.seta {
+	margin-bottom: 100px;
+}
+
+.seta a {
+	color: #6899b5;
+	text-decoration: none;
+	font-size: 30px;
+}
+
+.logo {
+	color: #d9dcf0;
+	font-size: 27px;
+	text-transform: uppercase;
+	text-decoration: none;
+	margin-top: 30px;
+	text-align: center;
+}
+
+.seta a:hover,
+.seta .ativo {
+	color: #7bb0cf;
+}
+
+.menu li:hover ul, 
+.menu li .over ul {
+	display: block;
+}
+
+.menu li ul li {
+	display: block;
+	
+}
+
+.container {
+	width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	height: auto;	
+}
+
+.direitos p {
+	font-size: 13px;
+	color: #7bb0cf;
+	text-decoration: none;
+	justify-content: left;
+	padding-bottom: 30px;
+	text-align: left;
+}
+
+.img-inicio img {
+	width: 100%;
+    height: auto;
+    max-width: 100%;
+	margin-bottom: 1px;
+}
+
+.conteudo {
+	margin-bottom: 70px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.conteudo p {
+	font-size: 15px;
+	color: #d9dcf0;
+	text-decoration: none;
+	text-align: justify;
+	line-height: 25px;
+	width: 850px;
+}
+
+.conteudo a {
+	color: #6899b5;
+	text-decoration: none;
+}
+
+.conteudo-obra img {
+	margin-bottom: 10px;
+}
+
+.destaque {
+	color:#6899b5;
+}
+
+.glitch-embed-wrap {
+	margin-bottom: 70px;
+}
+
+
+/*VERSAO TABLET-CELULAR*/
+@media (max-width:1339px) {
+	.container {
+		width: 100%;
+		padding-left: 25px;	
+		padding-right: 25px;
+	}
+
+	.conteudo {
+		margin-bottom: 100px;
+		display: block;
+	}
+
+	.conteudo h1 {
+		margin-right: 10px;
+		margin-bottom: 20px;
+	
+	}
+
+	.conteudo p {
+		width: auto;
+	}
+
+}
+
+@media (max-width:767px) {
+	.container {
+		width: 100%;
+		padding-left: 15px;	
+		padding-right: 15px;
+	}
+
+	.conteudo {
+		margin-bottom: 100px;
+		display: block;
+	}
+	
+}
+
