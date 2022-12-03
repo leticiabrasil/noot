@@ -150,10 +150,10 @@ body {
 	color:#6899b5;
 }
 
-.glitch-embed-wrap {
+.glitch-embed-wrap, .video {
 	margin-bottom: 70px;
 }
-
+ 
 
 /*VERSAO TABLET-CELULAR*/
 @media (max-width:1339px) {
